@@ -1,6 +1,9 @@
 function checkSID() {
   let sid = (document.getElementById("sid").value).trim();
-  if (sid.length == 10) {
+
+  let isOnlyNumbers = /^[0-9]+$/.test(sid);
+
+  if (sid.length == 10 && isOnlyNumbers) {
     return true;
   } else {
     return false;
