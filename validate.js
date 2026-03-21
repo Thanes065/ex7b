@@ -1,6 +1,9 @@
 function checkSID() {
   let sid = (document.getElementById("sid").value).trim();
-  if (sid.length == 10) {
+
+  let isOnlyNumbers = /^[0-9]+$/.test(sid);
+
+  if (sid.length == 10 && isOnlyNumbers) {
     return true;
   } else {
     return false;
@@ -9,7 +12,8 @@ function checkSID() {
 
 function checkCandiNo() {
   let candi = (document.getElementById("candi").value).trim();
-  if (isNaN(candi) || candi < 1) {
+ 
+  if (isNaN(candi) || candi < 1 || candi > 10) {
     return false;
   } else {
     return true;
